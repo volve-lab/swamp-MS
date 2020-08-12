@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'cooperative' => [
+            'driver'   => 'session',
+            'provider' => 'cooperatives',
+        ],
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -66,6 +71,11 @@ return [
     */
 
     'providers' => [
+        'cooperatives' => [
+            'driver' => 'eloquent',
+            'model'  => App\Cooperative::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -93,6 +103,12 @@ return [
     */
 
     'passwords' => [
+        'cooperatives' => [
+            'provider' => 'cooperatives',
+            'table'    => 'password_resets',
+            'expire'   => 60,
+        ],
+
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',

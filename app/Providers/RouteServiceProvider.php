@@ -39,8 +39,27 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapCooperativeRoutes();
+
         //
+    }    
+    
+    /**
+     * Define the "cooperative" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapCooperativeRoutes()
+    {
+        Route::prefix('cooperative')
+             ->middleware(['web'])
+             ->namespace($this->namespace)
+             ->group(base_path('routes/cooperative.php'));
     }
+
+
 
     /**
      * Define the "web" routes for the application.
