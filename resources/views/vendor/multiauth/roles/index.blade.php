@@ -1,9 +1,24 @@
-@extends('multiauth::layouts.app')
+@extends('multiauth::layouts.app') 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+ <!--  BEGIN CONTENT PART  -->
+ <div id="content" class="main-content">
+            <div class="container">
+                <div class="page-header">
+                    
+                </div>
+                
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                                <div class="info">                                
+                                    <h6 class="mt-4"></h6>
+                                    <div class="row">
+                                       
+                                        <div class="col-lg-12 col-md-7 mt-md-0 mt-4">
+                                            <div class="form">
+                                            <!-- <div class="col"> -->
+                                            <div class="card">
                 <div class="card-header bg-info text-white">
                     Roles
                     @permitTo('CreateRole')
@@ -19,8 +34,7 @@
                         @foreach ($roles as $role)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $role->name }}
-                            <span class="badge badge-primary badge-pill">{{ $role->admins->count() }} {{
-                                ucfirst(config('multiauth.prefix')) }}</span>
+                            <span class="badge badge-primary badge-pill">{{ $role->admins->count() }} Users</span>
                             <span class="badge badge-warning badge-pill">{{ $role->permissions->count() }}
                                 Permissions</span>
                             <div class="float-right">
@@ -44,7 +58,22 @@
                     </ol>
                 </div>
             </div>
+            <!-- </div> -->
+</div>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        </div>
+
+
+                   
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <!--  END CONTENT PART  -->
+
 @endsection

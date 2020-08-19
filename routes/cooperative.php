@@ -23,4 +23,38 @@ Route::group(['namespace' => 'Cooperative'], function() {
     Route::get('email/verify','Auth\VerificationController@show')->name('cooperative.verification.notice');
     Route::get('email/verify/{id}','Auth\VerificationController@verify')->name('cooperative.verification.verify');
 
+
+    //Cooperative route
+
+    Route::get('/information', 'CooperativeInfoController@index')->name('cooperative.index');
+    Route::get('/information/{id}/edit','CooperativeInfoController@edit')->name('cooperative.edit');
+    Route::get('/information/{id}/delete','CooperativeInfoController@destroy')->name('cooperative.destroy');
+    Route::get('/information/create','CooperativeInfoController@create')->name('cooperative.create');
+    Route::post('/information/create','CooperativeInfoController@store')->name('cooperative.store');
+    Route::post('/information/update','CooperativeInfoController@update')->name('cooperative.update');
+
+    //Cooperative swamp
+
+    Route::get('/swamp', 'DemandController@swamp')->name('cooperative.swamp');
+    Route::get('/request', 'DemandController@index')->name('demand.index');
+    Route::get('/swamp/{id}/request','DemandController@demand')->name('swamp.demand');
+    Route::get('/swamp/{id}/request/delete','DemandController@destroy')->name('demand.destroy');
+
+    Route::get('/swamp/{id}/payment','PaymentController@create')->name('demand.payment');
+    Route::post('/payment/create','PaymentController@store')->name('payment.store');
+
+    Route::get('/payment', 'PaymentController@index')->name('payment.index');
+
+
+    //  SWAMP PAYMENT
+
+    Route::get('/contract', 'PaymentController@contract')->name('cooperative.contract.index');
+    Route::get('/contract/{id}/approve','PaymentController@statusContractApprove')->name('status.contract.approve');
+    Route::get('/contract/{id}/deny','PaymentController@statusContractDeny')->name('status.contract.deny');
+    
+    
+
+
+
+    
 });

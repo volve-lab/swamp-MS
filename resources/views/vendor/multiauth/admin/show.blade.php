@@ -1,13 +1,28 @@
 @extends('multiauth::layouts.app') 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+ <!--  BEGIN CONTENT PART  -->
+ <div id="content" class="main-content">
+            <div class="container">
+                <div class="page-header">
+                    
+                </div>
+                
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                                <div class="info">                                
+                                    <h6 class="mt-4"></h6>
+                                    <div class="row">
+                                       
+                                        <div class="col-lg-12 col-md-7 mt-md-0 mt-4">
+                                            <div class="form">
+                                            <!-- <div class="col"> -->
+                                            <div class="card">
                 <div class="card-header">
-                    {{ ucfirst(config('multiauth.prefix')) }} List
+                    User List
                     <span class="float-right">
-                        <a href="{{route('admin.register')}}" class="btn btn-sm btn-success">New {{ ucfirst(config('multiauth.prefix')) }}</a>
+                        <a href="{{route('admin.register')}}" class="btn btn-sm btn-success">New User</a>
                     </span>
                 </div>
                 <div class="card-body">
@@ -33,12 +48,26 @@
                             </div>
                         </li>
                         @endforeach @if($admins->count()==0)
-                        <p>No {{ config('multiauth.prefix') }} created Yet, only super {{ config('multiauth.prefix') }} is available.</p>
+                        <p>No User created Yet, only super {{ config('multiauth.prefix') }} is available.</p>
                         @endif
                     </ul>
                 </div>
+            <!-- </div> -->
+</div>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        </div>
+
+
+                   
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+        <!--  END CONTENT PART  -->
+
 @endsection

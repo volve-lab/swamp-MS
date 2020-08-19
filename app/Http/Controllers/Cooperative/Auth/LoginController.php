@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/cooperative';
+    protected $redirectTo = '/cooperative/information';
 
     /**
      * Create a new controller instance.
@@ -75,6 +75,12 @@ class LoginController extends Controller
         $request->session()->regenerate();
 
         return redirect($this->redirectTo);
+    }
+
+    protected function credentials(Request $request)
+    {
+        // return $request->only($this->username(), 'password');
+        return ['email'=>$request->{$this->username()},'password'=>$request->password,'status'=>'1'];
     }
 
 }

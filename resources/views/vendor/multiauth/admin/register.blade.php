@@ -1,10 +1,25 @@
 @extends('multiauth::layouts.app') 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Register New {{ ucfirst(config('multiauth.prefix')) }}</div>
+ <!--  BEGIN CONTENT PART  -->
+ <div id="content" class="main-content">
+            <div class="container">
+                <div class="page-header">
+                    
+                </div>
+                
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                                <div class="info">                                
+                                    <h6 class="mt-4"></h6>
+                                    <div class="row">
+                                       
+                                        <div class="col-lg-12 col-md-7 mt-md-0 mt-4">
+                                            <div class="form">
+                                            <!-- <div class="col"> -->
+                                            <div class="card">
+                <div class="card-header">Register New User</div>
                 <div class="card-body">
     @include('multiauth::message')
                     <form method="POST" action="{{ route('admin.register') }}">
@@ -71,7 +86,22 @@
                     </form>
                 </div>
             </div>
+            <!-- </div> -->
+</div>            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        </div>
+
+
+                   
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <!--  END CONTENT PART  -->
+
 @endsection
